@@ -3,6 +3,7 @@
 cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin main;
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 function doIt() {
 	rsync --exclude ".git/" \

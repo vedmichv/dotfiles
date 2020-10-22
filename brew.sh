@@ -101,6 +101,7 @@ brew install kubectx
 
 brew install tmux
 brew install fzf
+brew install ripgrep
 brew install mc
 brew install bat
 brew install vagrant
