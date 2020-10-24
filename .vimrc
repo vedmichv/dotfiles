@@ -24,6 +24,9 @@ autocmd StdinReadPre * let s:std_in=1
 
 syntax on
 set number
+set hlsearch
+set incsearch
+noremap <F4> :set hlsearch! hlsearch?<CR>
 highlight Normal ctermbg=None
 highlight LineNr ctermfg=DarkGrey
 
