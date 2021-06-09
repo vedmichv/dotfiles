@@ -19,7 +19,7 @@ ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+brew install gnu-sed
 # Install a modern version of Bash.
 brew install bash
 # https://github.com/scop/bash-completion 
@@ -59,8 +59,6 @@ brew install nmap
 brew install socat
 # TCP/IP packet demultiplexer
 brew install tcpflow
-# Analyze tcpdump output
-brew install tcptrace
 
 # General-purpose data compression with high compression ratio
 brew install xz
