@@ -16,14 +16,13 @@ BREW_PREFIX=$(brew --prefix)
 brew install coreutils
 ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
-# Install some other useful utilities like `sponge`.
-brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+brew install gnu-sed
 # Install a modern version of Bash.
 brew install bash
+# https://github.com/scop/bash-completion 
 brew install bash-completion2
 
 # Switch to using brew-installed bash as default shell
@@ -32,18 +31,16 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
   chsh -s "${BREW_PREFIX}/bin/bash";
 fi;
 
-# Install `wget` with IRI support.
-brew install wget --with-iri
+# Install `wget`
+brew install wget 
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
+brew install vim
 brew install grep
 brew install openssh
-brew install screen
-brew install gmp
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -51,47 +48,31 @@ brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
 
-# Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew install aircrack-ng
+# Remove large files or passwords from Git history like git-filter-branch
 brew install bfg
+# GNU binary tools for native development
 brew install binutils
-brew install binwalk
-brew install cifer
-brew install dex2jar
-brew install dns2tcp
-brew install fcrackzip
-brew install foremost
-brew install hashpump
-brew install hydra
-brew install john
-brew install knock
-brew install netpbm
+
+
 brew install nmap
-brew install pngcheck
+# SOcket CAT: netcat on steroids
 brew install socat
-brew install sqlmap
+# TCP/IP packet demultiplexer
 brew install tcpflow
-brew install tcpreplay
-brew install tcptrace
-brew install ucspi-tcp # `tcpserver` etc.
-brew install xpdf
+
+# General-purpose data compression with high compression ratio
 brew install xz
 brew install telnet
 brew install mysql
 brew install jq
 brew install htop
 
-
-
-#brew install exiv2
 brew install git
 brew install git-lfs
-brew install rlwrap
 brew install ssh-copy-id
 brew install tree
-brew install zopfli
 brew install go
-brew cask install powershell
+brew install powershell
 
 brew install kubectl
 brew install minikube
@@ -101,15 +82,15 @@ brew install kubectx
 
 brew install tmux
 brew install fzf
-brew install ripgrep
 brew install mc
 brew install bat
-brew install vagrant
+
 brew install terraform
 brew install terragrunt
 brew install ansible
 brew install helm
 brew install azure-cli
+
 #Docker static analizator
 brew install aquasecurity/trivy/trivy
 # Education
@@ -118,3 +99,8 @@ brew install exercism
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1
