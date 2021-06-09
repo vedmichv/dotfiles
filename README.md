@@ -34,3 +34,4 @@ Some of the functionality of these dotfiles depends on formulae installed by `br
 
 dotfiles is released under the MIT license.
 
+Configuration of iTerm based on [article](https://medium.com/@jeantimex/how-to-configure-iterm2-and-vim-like-a-pro-on-macos-e303d25d5b5c)
